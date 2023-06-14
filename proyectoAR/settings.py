@@ -21,70 +21,66 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-br4-6pry%2h!_wq7w@x$xgm2z9lt-3#7d%c*!vik6!z6a4qsma'
+SECRET_KEY = "django-insecure-br4-6pry%2h!_wq7w@x$xgm2z9lt-3#7d%c*!vik6!z6a4qsma"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '*',
-    '127.0.0.1',  # CAMBIO
-    'localhost'  # CAMBIO
-]
+ALLOWED_HOSTS = ["*", "127.0.0.1", "localhost", "192.168.0.10"]  # CAMBIO  # CAMBIO
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework_simplejwt',  # CAMBIO
-    'rest_framework',  # CAMBIO
-    'drf_yasg',  # CAMBIO
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "rest_framework_simplejwt",  # CAMBIO
+    "rest_framework",  # CAMBIO
+    "drf_yasg",  # CAMBIO
     "corsheaders",  # CAMBIO
-    'django_filters',  # CAMBIO
-    'personas',
-    'usuarios',
-    'pacientes',
-    'consultas',
-    'enfermedades',
+    "django_filters",  # CAMBIO
+    "personas",
+    "usuarios",
+    "pacientes",
+    "consultas",
+    "enfermedades",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",  # CAMBIO
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'  # CAMBIO
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # CAMBIO
 ]
 
-ROOT_URLCONF = 'proyectoAR.urls'
+ROOT_URLCONF = "proyectoAR.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'proyectoAR.wsgi.application'
+WSGI_APPLICATION = "proyectoAR.wsgi.application"
 
 
 # Database
@@ -97,11 +93,11 @@ DATABASES = {
     # }
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        'NAME': 'BDPaola',
-        'USER': 'postgres',
-        'PASSWORD': 'paola',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        "NAME": "BDPaola",
+        "USER": "postgres",
+        "PASSWORD": "paola",
+        "HOST": "localhost",
+        "PORT": 5432,
     }
 }
 
@@ -111,23 +107,23 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
 # CAMBIO TOKEN
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     )
 }
 
@@ -135,9 +131,9 @@ REST_FRAMEWORK = {
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -149,8 +145,8 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 # CAMBIO SUBIDAS DE ARCHIVOS
-MEDIA_URL = '/uploads/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = "/uploads/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -158,29 +154,73 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # USERS
-AUTH_USER_MODEL = 'usuarios.Usuario'
+AUTH_USER_MODEL = "usuarios.Usuario"
 
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 
-# CAMBIO
+CORS_ALLOWED_ORIGINS = [
+    "http://192.168.1.204",
+    "http://0.0.0.0:80",
+    "http://0.0.0.0",
+    "http://0.0.0.0",
+    "http://192.168.1.200",
+    "http://127.0.0.1",
+    "http://localhost",
+    "http://192.168.1.200:8000",
+]
+CORS_ORIGIN_WHITELIST = [
+    "http://192.168.1.204",
+    "http://0.0.0.0:80",
+    "http://0.0.0.0",
+    "http://0.0.0.0",
+    "http://192.168.1.200",
+    "http://127.0.0.1",
+    "http://localhost",
+    "http://192.168.1.200:8000",
+]
+CORS_ORIGIN_REGEX_WHITELIST = [
+    "http://192.168.1.204",
+    "http://0.0.0.0:80",
+    "http://0.0.0.0",
+    "http://0.0.0.0",
+    "http://192.168.1.200",
+    "http://127.0.0.1",
+    "http://localhost",
+    "http://192.168.1.200:8000",
+]
+
+# CORS_ALLOW_HEADERS = [
+#     'accept',
+#     'accept-enconding',
+#     'authorization',
+#     'authorization',
+#     'content-type'
+#     'dnt'
+#     'origin'
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with'
+# ]
+
+
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=360),
+    "ACCESS_TOKEN_LIFETIME": datetime.timedelta(days=360),
 }
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_TMP = os.path.join(BASE_DIR, 'static')
-# STATIC_DIR = os.path.join(BASE_DIR, 'static')
-# STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_TMP = os.path.join(BASE_DIR, "static")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+STATIC_URL = "/static/"
 
-# os.makedirs(STATIC_TMP, exist_ok=True)
-# os.makedirs(STATIC_ROOT, exist_ok=True)
-# os.makedirs(STATIC_DIR, exist_ok=True)
+os.makedirs(STATIC_TMP, exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
+os.makedirs(STATIC_DIR, exist_ok=True)
 
 
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
